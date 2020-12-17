@@ -1,5 +1,4 @@
 import asyncio
-import time
 
 async def inf_loop():
     loop_cnt = 0
