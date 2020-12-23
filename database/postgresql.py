@@ -44,9 +44,25 @@ def find_alarm_id_by_alarm_id(conn, alarm_id):
 
         return ids
 
+def find_name_all(conn):
+        cur = conn.cursor()
+        query = "select name from test"
+        cur.execute(query, )
+
+        names = []
+        
+        row = cur.fetchone()
+        while row is not None:
+            names.append(row[0])
+            row = cur.fetchone()
+
+        return names
+
 if __name__ == '__main__':
-    conn = psycopg2.connect(host='192.168.7.130', dbname='platform_rms',
-                            user='aiplatform', password='platformadmin', port='30432')
+    # conn = psycopg2.connect(host='192.168.7.130', dbname='platform_rms',
+    #                         user='aiplatform', password='platformadmin', port='30432')
+    conn = psycopg2.connect(host='192.168.7.130', dbname='postgres',
+                            user='postgres', password='qnqdjhCaU0', port='30433')
 
     # rowcount = save(conn)
     # print('Save:', rowcount)
@@ -55,7 +71,7 @@ if __name__ == '__main__':
     #     print("Insert count:", i)
     while True:
         # print(f"started at {time.strftime('%X')}")
-        print(f"{time.strftime('%X')} : {find_alarm_id_by_alarm_id(conn, 2)}")
+        print(f"{time.strftime('%X')} : {find_name_all(conn)}")
         time.sleep(1)
 
     conn.close()
