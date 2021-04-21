@@ -1,0 +1,4 @@
+{
+  "postgres_url" : "postgresql://aiplatform:platformadmin@192.168.7.130:30432/platform_rms",
+  "mongodb_url" : "mongodb://aiplatform:platformadmin@192.168.7.130:30717/rawdata"
+}
