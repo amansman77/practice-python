@@ -69,6 +69,7 @@ if __name__ == '__main__':
     # for i in range(1000):
     #     saveOne(conn)
     #     print("Insert count:", i)
+    
     while True:
         # print(f"started at {time.strftime('%X')}")
         print(f"{time.strftime('%X')} : {find_name_all(conn)}")
