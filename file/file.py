@@ -1,4 +1,5 @@
 import os
+from os import path
 
 def get_file_list():
     """
@@ -30,7 +31,30 @@ def create_file_link():
 
     print("symlink created")
 
+def is_exist():
+    print(__file__)
+    print(path.exists('e:/ho/dev/IDE/VSCode-win32-x64/workspace/practice-python/file/sample.txt'))
+    print(path.exists('sample.txt'))
+    print(path.exists('./sample.txt'))
+    print(path.exists('file/sample.txt'))
+    print(os.getcwd())
+    print(path.exists(os.getcwd() + '/file/sample.txt'))
+
+def read_line_enumerate(line_number):
+    with open('file/sample.txt', 'r') as file:
+        for i, line in enumerate(file):
+            if i == line_number:
+                print(line)
+
+def read_line_readlines(line_number):
+    with open('file/sample.txt', 'r') as file:
+        row = file.readlines()[line_number]
+        print(row)
+
+
 if __name__ == '__main__':
     # get_file_list()
-    create_file()
+    # create_file()
     # create_file_link()
+    # is_exist()
+    read_line_readlines(9)
